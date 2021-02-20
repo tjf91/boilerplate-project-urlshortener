@@ -2,9 +2,10 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const {SERVER_PORT}=process.env
 
 // Basic Configuration
-const port = process.env.PORT || 3000;
+// const port = process.env.PORT || 3000;
 
 app.use(cors());
 
@@ -19,6 +20,6 @@ app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
 
-app.listen(port, function() {
-  console.log(`Listening on port ${port}`);
+app.listen(SERVER_PORT, function() {
+  console.log(`Listening on port ${SERVER_PORT}`);
 });
